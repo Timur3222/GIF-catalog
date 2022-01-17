@@ -1,0 +1,134 @@
+@mixin button($color, $width) {
+  width: $width;
+  padding: 5px;
+  border: 2px solid $color;
+  border-radius: 3px;
+  color: $color;
+  background: none;
+  font-size: 18px;
+  &:hover {
+    background-color: $color;
+    color: white;
+    cursor: pointer;
+  }
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Jost', sans-serif;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  h1 {
+    margin-bottom: 20px;
+    font-family: 'Bakbak One', cursive;
+    cursor: default;
+  }
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.search-input {
+  outline: none;
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+.download-btn {
+  @include button(#2cb973, 110px);
+}
+
+.clear-btn {
+  @include button(#b92c2c, 110px);
+}
+
+.group-btn {
+  @include button(#2c62b9, 145px);
+}
+
+.download-btn-disabled {
+  @include button(hsl(150, 62%, 60%), 110px);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.images-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.image-wrapper {
+  height: fit-content;
+  padding: 10px;
+  box-shadow: 0px 0px 10px 3px rgba(34, 60, 80, 0.2);
+  img {
+    cursor: pointer;
+  }
+}
+
+.groups-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  width: 1585px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  width: 762px;
+  height: fit-content;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 3px rgba(34, 60, 80, 0.2);
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+.groupped-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 68px;
+  right: 1257px;
+  padding: 4px 7px;
+  background: rgb(246, 133, 133);
+  border-radius: 3px;
+  color: white;
+  transition: 0.3s;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -9px;
+  border-width: 9px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(246, 133, 133);
+}
